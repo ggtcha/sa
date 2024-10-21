@@ -1,0 +1,70 @@
+/* Style สำหรับตัวเมนู */
+.custom-navbar {
+  background-color: #2C2C2C; /* เปลี่ยนเป็นสีเทาเข้ม */
+  width: 240px;
+  min-height: 100vh;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-navbar-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 15px 0;
+}
+
+.custom-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #FFFFFF; /* สีขาว */
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.custom-nav-link:hover {
+  background-color: #4A4A4A; /* สีเทาเข้มเมื่อ hover */
+}
+
+.custom-nav-link.active {
+  background-color: #757575; /* สีเทาเมื่อ active */
+}
+
+.nav-icon {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #FFFFFF; /* สีขาวสำหรับไอคอน */
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #FFFFFF; /* สีขาว */
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px 20px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: #E74C3C; /* สีแดงเมื่อ hover */
+}
+
+.logout-button i {
+  margin-right: 15px;
+  color: #FFFFFF; /* สีขาวสำหรับไอคอน logout */
+}
+
+.d-flex {
+  display: flex;
+}
