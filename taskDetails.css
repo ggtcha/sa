@@ -1,0 +1,35 @@
+/* src/taskDetails.css */
+.task-details {
+    max-width: 600px; 
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0; 
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-info p {
+    margin: 10px 0; 
+    font-size: 16px; 
+}
+
+.task-info strong {
+    color: #333; 
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status-in-progress {
+    color: #ffc107; 
+}
+
+.status-completed {
+    color: #28a745; 
+}
+
+.status-pending {
+    color: #dc3545; 
+}

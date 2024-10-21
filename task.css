@@ -1,0 +1,43 @@
+/* task.css */
+
+.task-page {
+    padding: 20px;
+    background-color: #f4f6f9; 
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.task-list {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.task-list th,
+.task-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.completed {
+    color: green; 
+}
+
+.status.pending {
+    color: orange; 
+}
+
+.btn-view {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-view:hover {
+    text-decoration: underline;
+}
