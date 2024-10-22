@@ -1,36 +1,22 @@
-// TaskContext.js
 import React, { createContext, useState } from 'react';
 
+// สร้าง context สำหรับ Task
 export const TaskContext = createContext();
 
-const TaskProvider = ({ children }) => {
-    const [tasks, setTasks] = useState([
-        {
-            id: 1,
-            project: 'Project Alpha',
-            status: 'Pending',
-            startDate: '2024-10-20', 
-            deadline: '2024-11-20',
-        },
-        {
-            id: 2,
-            project: 'Project Beta',
-            status: 'In Progress',
-            startDate: '2024-10-21',
-            deadline: '2024-12-01',
-        },
-    ]);
+export const TaskProvider = ({ children }) => {
+    const [tasks, setTasks] = useState([]);
 
+   
     const addTask = (newTask) => {
-        setTasks(prevTasks => [
-            ...prevTasks,
-            { id: Date.now(), ...newTask }
-        ]);
+       
+        const taskWithId = { ...newTask, id: Date.now() }; 
+        setTasks((prevTasks) => [...prevTasks, taskWithId]);
     };
 
+    
     const updateTaskStatus = (taskId, newStatus) => {
-        setTasks(prevTasks => 
-            prevTasks.map(task =>
+        setTasks((prevTasks) =>
+            prevTasks.map((task) =>
                 task.id === taskId ? { ...task, status: newStatus } : task
             )
         );

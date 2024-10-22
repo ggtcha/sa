@@ -1,133 +1,88 @@
 .task-admin-container {
-    max-width: 900px; 
-    margin: 70px auto; 
-    padding: 30px; 
-    padding-left: 50px;
-    padding-right: 50px; 
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: 300px;
+    font-family: 'Arial', sans-serif;
 }
 
-h1 {
+.h1-admin {
+    font-size: 28px;
     text-align: center;
-    color: #444;
-    font-family: 'Arial', sans-serif; 
-    font-size: 2rem; 
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    color: #000000;
 }
 
 .task-form {
-    display: flex; 
-    flex-direction: column;
-    gap: 15px; 
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-input,
 .form-select {
-    padding: 12px; 
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px; 
-    font-size: 16px; 
-    transition: border-color 0.3s; 
-}
-
-.form-input:focus,
-.form-select:focus {
-    border-color: #4CAF50; 
-    outline: none; 
+    border-radius: 4px;
 }
 
 .submit-button {
-    padding: 12px 20px;
-    background-color: #4CAF50; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s; 
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-    background-color: #45a049; 
+    background-color: #000000;
+}
+
+.task-table-container {
+    overflow-x: auto;
 }
 
 .task-table {
-    width: 100%; 
-    border-collapse: collapse; 
-    margin-top: 20px; 
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 .task-table th,
 .task-table td {
     padding: 12px;
-    text-align: left; 
-    border-bottom: 1px solid #ddd; 
-    transition: background-color 0.2s; 
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
 .task-table th {
-    background-color: #f2f2f2; 
-    font-weight: bold; 
-    border-top: 2px solid #ddd; 
+    background-color: #000000;
+    color: white;
 }
 
-.task-table tr:hover {
+.task-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.status-button {
-    padding: 6px 12px; 
-    margin: 2px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 14px; 
-    transition: opacity 0.3s; 
+.task-table tr:hover {
+    background-color: #f1f1f1;
 }
 
-.status-button:hover {
-    opacity: 0.9; 
-}
-
-.status-button:nth-child(1) {
-    background-color: #2196F3; 
+.action-button {
+    background-color: #ffc107;
     color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
-.status-button:nth-child(2) {
-    background-color: #4CAF50; 
-    color: white;
-}
-
-.status-button:nth-child(3) {
-    background-color: #FFC107; 
-    color: black;  
-}
-
-
-@media (max-width: 600px) {
-    .task-admin-container {
-        padding: 20px; 
-        padding-left: 20px; 
-        padding-right: 20px; 
-        max-width: 100%; 
-    }
-    
-    h1 {
-        font-size: 1.5rem; 
-    }
-
-    .form-input,
-    .form-select,
-    .submit-button {
-        font-size: 14px;
-    }
-
-    .task-table th,
-    .task-table td {
-        padding: 8px; 
-    }
+.action-button:hover {
+    background-color: #e0a800;
 }

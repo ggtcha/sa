@@ -1,30 +1,33 @@
-// src/TaskDetails.js
+// TaskDetail.js
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { TaskContext } from '../TaskContext'; // นำเข้า TaskContext
-import './taskDetails.css'; // สไตล์สำหรับ TaskDetails
+import { TaskContext } from '../Context/TaskContext'; 
+import './taskDetails.css';
 
-const TaskDetails = () => {
-    const { id } = useParams(); // ดึง id จาก URL
-    const { tasks } = useContext(TaskContext); // ใช้ Context
+const TaskDetail = () => {
+    const { id } = useParams(); 
+    const { tasks } = useContext(TaskContext);
 
-    const task = tasks.find(t => t.id === parseInt(id)); // หา task โดยใช้ id
+    const task = tasks.find(task => task.id === parseInt(id)); 
+
+    if (!task) {
+        return <p>Task not found!</p>;
+    }
 
     return (
-        <div className="task-details">
-            <h2>รายละเอียดงาน</h2>
-            {task ? (
-                <div className="task-info">
-                    <p><strong>โปรเจค:</strong> {task.project}</p>
-                    <p><strong>สถานะ:</strong> <span className={`status ${task.status.toLowerCase().replace(' ', '-')}`}>{task.status}</span></p>
-                    <p><strong>มอบหมายให้:</strong> {task.assignedTo}</p>
-                    <p><strong>กำหนดส่ง:</strong> {task.deadline}</p>
-                </div>
-            ) : (
-                <p>ไม่พบข้อมูลงานนี้</p>
-            )}
+        <div className="task-detail">
+            <h2>Task Details for: {task.project}</h2>
+            <hr />
+            <p><strong>Status:</strong> <span className={`status status-${task.status.toLowerCase().replace(' ', '-')}`}>{task.status}</span></p>
+            <p><strong>Start Date:</strong> {task.startDate}</p>
+            <p><strong>Deadline:</strong> {task.deadline}</p>
+            <p><strong>Description:</strong> {task.description || "No description available."}</p>
+            <p><strong>Assigned To:</strong> {task.assignedTo || "Not assigned"}</p>
+            <p><strong>Priority:</strong> {task.priority || "No priority set"}</p>
+            <p><strong>Estimated Completion Time:</strong> {task.estimatedCompletionTime || "No estimate provided"}</p>
+            <p><strong>Progress:</strong> {task.progress ? `${task.progress}%` : "No progress recorded"}</p>
         </div>
     );
 };
 
-export default TaskDetails;
+export default TaskDetail;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaEye } from 'react-icons/fa';
-import { TaskContext } from '../TaskContext'; 
+import { TaskContext } from '../Context/TaskContext'; 
 import './task.css';
 
 const Task = () => {
@@ -9,12 +9,12 @@ const Task = () => {
 
     return (
         <div className="task-page">
-            <h1>TASK</h1>
+            <h1 className='task text-center'>TASK</h1>
             <hr />
             {tasks.length > 0 ? (
                 <TaskList tasks={tasks} /> 
             ) : (
-                <p>No tasks available.</p>
+                <p className="no-tasks">No tasks available.</p>
             )}
         </div>
     );
@@ -57,4 +57,4 @@ const TaskList = ({ tasks }) => {
     );
 };
 
-export default Task; // ส่งออกคอมโพเนนต์ Task
+export default Task;
